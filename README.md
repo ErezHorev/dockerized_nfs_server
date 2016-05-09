@@ -13,7 +13,7 @@ Dockerized NFS Server
 [**Get docker !**](https://docs.docker.com/linux/started/)
 
 ### Before you start
-* This was originally created for the following purposes: development, testing and playground, as i develop locally on my pc without the need to have a real nfs server while on train/plain and w/o dirtying my pc with non-essential packages. I haven't tested it performance-wise nor using it in production.
+* This was originally created for the following purposes: development, testing and playground, as i develop locally on my pc without the need to have a real nfs server while on train or plane and without dirtying my pc with non-essential packages. I haven't tested it performance-wise nor using it in production.
 * This nfs server is currently not secured and using docker `privileged` flag in order to allow mount NFS filesystem, export it as docker volume (also for use by other containers) and overcome security modules limitations (e.g. 'selinux', 'appArmor'..etc).  
 It can be run in more secured mode, if you'll handle those limitations by yourself and then start server by just running:  
 `docker run -d --name mynfs --cap-add=SYS_ADMIN erezhorev/dockerized_nfs_server`  
