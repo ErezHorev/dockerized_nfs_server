@@ -3,7 +3,7 @@ set -e
 
 ipv4_regex="([0-9]{1,3}[\.]){3}[0-9]{1,3}"
 
-docker run -d --name mynfs --privileged erezhorev/dockerized_nfs_server $@
+docker run -d --name mynfs --privileged docker.io/erezhorev/dockerized_nfs_server $@
 
 nfsip=`docker inspect mynfs | grep -iw ipaddress | grep -Eo $ipv4_regex`
 
