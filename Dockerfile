@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 
 RUN apt-get update && apt-get install -y nfs-kernel-server
 RUN mkdir -p /exports
