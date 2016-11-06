@@ -56,6 +56,12 @@ Run: `mount -v -t nfs -o proto=tcp,port=2049 [nfs server ip]:/exports/share1 /mn
 #### Get inside container's shell
 Run: `docker exec -ti mynfs bash`
 
+And then, for example, you may run `netstat -tl` to see if nfs is there.
+
+#### Make sure native host kernel support nfs
+Run: `lsmod | grep nfsd` to see if the kernel module is there.
+
+The nfs service of the docker container relies on the kernel of the native host to provide the kernel-level nfs support. If your nfs service is not up correctly, please make sure your native kernel does support nfs service.
 
 General Info
 =====
