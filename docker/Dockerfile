@@ -1,6 +1,10 @@
-FROM ubuntu:14.04
+FROM ubuntu:xenial
 
-RUN apt-get update && apt-get install -y nfs-kernel-server
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        netbase \
+        nfs-kernel-server \
+	&& rm -rf /var/lib/apt/lists/*
+
 RUN mkdir -p /exports
 
 VOLUME /exports
