@@ -32,8 +32,5 @@ service nfs-kernel-server start
 
 echo "- Nfs server is up and running.."
 
-## Run until signaled to stop...
-while :
-do
-    sleep 1  # Interupt interval time
-done
+## Run forever
+sleep infinity
