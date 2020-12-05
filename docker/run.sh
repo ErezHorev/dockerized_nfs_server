@@ -25,13 +25,8 @@ for export in "${exports[@]}"; do
     chmod 777 $src
     echo "$src *(rw,sync,insecure,no_subtree_check,no_root_squash)" | tee -a /etc/exports
 done
-
 rpcbind
-echo -e "rpcbind: "
-echo $?
 rpc.statd
-echo -e "rpc.statd: "
-echo $?
 echo -e "\n- Initializing nfs server.."
 service nfs-kernel-server start
 
