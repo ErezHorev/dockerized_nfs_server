@@ -27,6 +27,7 @@ for export in "${exports[@]}"; do
 done
 
 echo -e "\n- Initializing nfs server.."
+rpc.statd
 rpcbind
 service nfs-kernel-server start
 
