@@ -25,9 +25,9 @@ for export in "${exports[@]}"; do
     chmod 777 $src
     echo "$src *(rw,sync,insecure,no_subtree_check,no_root_squash)" | tee -a /etc/exports
 done
-
-echo -e "\n- Initializing nfs server.."
 rpcbind
+rpc.statd
+echo -e "\n- Initializing nfs server.."
 service nfs-kernel-server start
 
 echo "- Nfs server is up and running.."
